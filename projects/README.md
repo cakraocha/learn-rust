@@ -19,3 +19,8 @@ cargo run # again, will run debug version by default
 - Difference: dev faster to build but not optimised, release takes time to build but optimised
 - `cargo run --release` will run the release version
 - `cargo check` build a project without producing binary to check for some errors
+
+### 2. Guessing game
+- See the `main.rs` code to learn more in details
+- `cargo build` will automatically download all dependencies from `Cargo.toml`
+- `cargo update` to update any dependencies. By default, the dependencies in `Cargo.toml`, e.g. `rand = "0.8.5"` == `rand = "^0.8.5"`, which means any updates from 0.8.5 to < 0.9.0 will be automatically updated.
