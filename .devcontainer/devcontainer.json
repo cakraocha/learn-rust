@@ -1,0 +1,14 @@
+{
+  "name": "Rust Dev Container",
+  "image": "rust:latest",
+  "extensions": [
+    "vadimcn.vscode-lldb",
+    "matklad.rust-analyzer"
+  ],
+  "settings": {
+    "rust-client.rustfmtPath": "/usr/local/cargo/bin/rustfmt",
+    "rust-client.cargoPath": "/usr/local/cargo/bin/cargo",
+    "rust-client.rlsPath": "/usr/local/cargo/bin/rls",
+    "terminal.integrated.shell.linux": "/bin/bash"
+  }
+}
