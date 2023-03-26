@@ -51,7 +51,8 @@ fn main() {
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
-    println!("The secret number is: {secret_number}");
+    // debug
+    // println!("The secret number is: {secret_number}");
 
     loop {
         println!("Please input your guess.");
@@ -64,7 +65,17 @@ fn main() {
 
         // even though there is variable guess before this, rust has a feature called `shadowing`
         // Shadowing allows to reuse guess variable to create two unique variables
-        let guess: u32 = guess.trim().parse().expect("Please type a number!");
+        // Below example without proper handling
+        // let guess: u32 = guess.trim().parse().expect("Please type a number!");
+
+        // Example with proper handling
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Not a number!");
+                continue;
+            },
+        };
         /*
         without code above wiill produce error
 
